@@ -11,24 +11,45 @@ import numpy as np
 
 
 def load_csv(filename):  
-    """Load a Numpy array from a CSV
+    """Load comma-separated numeric data from a CSV file.
 
-    :param filename: Filename of CSV to load
+    The CSV is expected to store one patient's daily measurements per row.
+
+    :param filename: Path to the CSV file to load.
+    :returns: The loaded data as a NumPy array.
     """
     return np.loadtxt(fname=filename, delimiter=',')
 
 
 def daily_mean(data):
-    """Calculate the daily mean of a 2D inflammation data array."""
+    """Calculate the mean inflammation value for each day.
+
+    The mean is taken across patients (axis 0), producing one value per day.
+
+    :param data: Two-dimensional array with patients in rows and days in columns.
+    :returns: One mean value for each day.
+    """
     return np.mean(data, axis=0)
 
 
 def daily_max(data):
-    """Calculate the daily max of a 2D inflammation data array."""
+    """Find the maximum inflammation value for each day.
+
+    The maximum is taken across patients (axis 0), producing one value per day.
+
+    :param data: Two-dimensional array with patients in rows and days in columns.
+    :returns: One maximum value for each day.
+    """
     return np.max(data, axis=0)
 
 
 def daily_min(data):
-    """Calculate the daily min of a 2D inflammation data array."""
+    """Find the minimum inflammation value for each day.
+
+    The minimum is taken across patients (axis 0), producing one value per day.
+
+    :param data: Two-dimensional array with patients in rows and days in columns.
+    :returns: One minimum value for each day.
+    """
     return np.min(data, axis=0)
 

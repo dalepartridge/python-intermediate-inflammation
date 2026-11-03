@@ -5,9 +5,13 @@ import numpy as np
 
 
 def visualize(data_dict):
-    """Display plots of basic statistical properties of the inflammation data.
+    """Plot and display each supplied daily statistic.
 
-    :param data_dict: Dictionary of name -> data to plot
+    Each dictionary entry creates a subplot labeled with its key and plots its
+    values in order. The figure is displayed with Matplotlib.
+
+    :param data_dict: Mapping of statistic names to one-dimensional data series.
+    :returns: None.
     """
     # TODO(lesson-design) Extend to allow saving figure to file
 

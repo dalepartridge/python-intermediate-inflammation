@@ -7,11 +7,13 @@ from inflammation import models, views
 
 
 def main(args):
-    """The MVC Controller of the patient inflammation data system.
+    """Load, summarize, and plot each input inflammation data file.
 
-    The Controller is responsible for:
-    - selecting the necessary models and views for the current task
-    - passing data between models and views
+    For each filename in ``args.infiles``, load the patient-by-day data,
+    calculate its daily mean, maximum, and minimum, then display those series.
+
+    :param args: Parsed command-line arguments containing ``infiles``.
+    :returns: None.
     """
     infiles = args.infiles
     if not isinstance(infiles, list):
